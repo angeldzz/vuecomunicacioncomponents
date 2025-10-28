@@ -1,6 +1,18 @@
 <template>
   <div>
-    <div v-if="comicFavorito !== null">
+    <h2>Padre Comics</h2>
+    <form v-on:submit.prevent="createComic()">
+        <label>Titulo</label>
+        <input type="text" v-model="comicForm.titulo">
+        <label>Imagen</label>
+        <input type="text" v-model="comicForm.imagen">
+        <label>Descripción</label>
+        <input type="text" v-model="comicForm.descripcion">
+        <label>Año</label>
+        <input type="number" v-model="comicForm.year">
+        <button>Nuevo Comic</button>
+    </form>
+    <div style="background-color: lightgreen;" v-if="comicFavorito !== null">
         <h1 style="color: blue;">{{ comicFavorito.titulo }}</h1>
     <img :src="comicFavorito.imagen">
     <h4 :class="{
@@ -8,11 +20,10 @@
         verde: comicFavorito.year > 2000
     }">
         Year: {{ comicFavorito.year }}</h4>
-        <button @click="seleccionarFavorito">Seleccionar Favorito</button>
     </div>
     <h1 id="mec">Padre Comics</h1>
-    <div id="comic" v-for="comic in comics" :key="comic">
-    <ComicComponent :comic="comic" v-on:seleccionarFavorito="seleccionarFavorito"/>
+    <div id="comic" v-for="(comic, index) in comics" :key="comic">
+    <ComicComponent :comic="comic" :index="index" v-on:seleccionarFavorito="seleccionarFavorito" v-on:deleteComic="deleteComic"/>
     </div>
   </div>
 </template>
@@ -28,10 +39,22 @@ export default {
     methods:{
         seleccionarFavorito(comic){
             this.comicFavorito = comic
+        },
+        deleteComic(index){
+            this.comics.splice(index, 1)
+        },
+        createComic(){
+            this.comics.push(this.comicForm)
         }
     },
     data(){
         return{
+            comicForm:{
+                titulo:"",
+                imagen:"",
+                descripcion:"",
+                year:0
+            },
             comicFavorito:null,
             comics: [
                 {
@@ -51,7 +74,7 @@ export default {
                 {
                 titulo: "Guardianes de la Galaxia",
                 imagen:
-                    "https://cdn.normacomics.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/g/u/guardianes_galaxia_guadianes_infinito.jpg",
+                    "https://m.media-amazon.com/images/M/MV5BYWI0NTNlN2MtMWRjNy00M2QwLWFlZTgtZTlkMTZiYTU2NTk1XkEyXkFqcGc@._V1_.jpg",
                 descripcion: "Yo soy Groot"
                 , year: 2006
                 },

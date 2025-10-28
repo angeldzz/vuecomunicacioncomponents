@@ -8,16 +8,20 @@
     }">
         Year: {{ comic.year }}</h4>
         <button @click="seleccionarFavorito">Seleccionar Favorito</button>
+        <button @click="deleteComic">Delete</button>
     </div>
 </template>
 
 <script>
 export default {
     name:"ComicComponent",
-    props:["comic"],
+    props:["comic","index"],
     methods:{
         seleccionarFavorito(){
             this.$emit("seleccionarFavorito",this.comic)
+        },
+        deleteComic(){
+            this.$emit("deleteComic",this.index)
         }
     }
 }
