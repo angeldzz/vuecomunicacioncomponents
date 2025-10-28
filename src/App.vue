@@ -1,11 +1,15 @@
 <template>
-  <!-- <PadreDeportes/> -->
-  <!-- <PadreNumeros/> -->
-  <ComicsComponent/>
+  <div>
+    <!-- <PadreDeportes/> -->
+    <!-- <PadreNumeros/> -->
+    <!-- <ComicsComponent/> -->
+    <SeleccionMultiple/>
+  </div>
 </template>
 
 <script>
-import ComicsComponent from './components/ComicsComponent.vue'
+import SeleccionMultiple from './components/SeleccionMultiple.vue'
+// import ComicsComponent from './components/ComicsComponent.vue'
 // import PadreDeportes from './components/PadreDeportes.vue'
 // import PadreNumeros from './components/PadreNumeros.vue'
 export default {
@@ -13,7 +17,8 @@ export default {
   components: {
     // PadreDeportes,
     // PadreNumeros,
-    ComicsComponent
+    // ComicsComponent,
+    SeleccionMultiple
   }
 }
 </script>
