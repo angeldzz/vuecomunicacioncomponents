@@ -3,11 +3,13 @@
     <!-- <PadreDeportes/> -->
     <!-- <PadreNumeros/> -->
     <!-- <ComicsComponent/> -->
+    <GenerarCheckboxVue/>
     <SeleccionMultiple/>
   </div>
 </template>
 
 <script>
+import GenerarCheckboxVue from './components/GenerarCheckbox.vue'
 import SeleccionMultiple from './components/SeleccionMultiple.vue'
 // import ComicsComponent from './components/ComicsComponent.vue'
 // import PadreDeportes from './components/PadreDeportes.vue'
@@ -18,7 +20,7 @@ export default {
     // PadreDeportes,
     // PadreNumeros,
     // ComicsComponent,
-    SeleccionMultiple
+    SeleccionMultiple,GenerarCheckboxVue
   }
 }
 </script>
