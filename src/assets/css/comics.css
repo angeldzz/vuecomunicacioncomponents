@@ -1,0 +1,17 @@
+h1#mec{
+    background-color: rgba(109, 189, 255, 0.678);
+}
+.rojo{
+    background-color: red;
+    color: white;
+}
+.verde{
+    background-color: green;
+}
+img{
+    width: 150px;
+    height: 250px;
+}
+div#comics{
+    float: left;
+}
