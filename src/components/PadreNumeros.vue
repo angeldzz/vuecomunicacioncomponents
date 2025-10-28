@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Numero Padre {{ sumaPadre }}</h1>
+    <h1 style="color: red;">Numero Padre {{ sumaPadre }}</h1>
     <button @click="generarNumero">Generar Nuevo Numero</button>
     <HijoNumeros v-for="numero in numerosRandom" :key="numero" :nuevoNumero="numero" v-on:sumaHijos="sumaHijos"/>
   </div>
