@@ -1,7 +1,7 @@
 <template>
   <div>
     <form v-on:submit.prevent="mostrarSeleccionados">
-      <select v-model="seleccionados" multiple size="4">
+      <select v-model="seleccionados" multiple size="7">
         <option>Elemento 1</option>
         <option>Elemento 2</option>
         <option>Elemento 3</option>
@@ -10,9 +10,12 @@
         <option>Elemento 6</option>
         <option>Elemento 7</option>
     </select>
-    <button >Mostrar Seleccionados</button>
+    <button>Mostrar Seleccionados</button>
     </form>
-    <h2>{{ mensaje }}</h2>
+    <h1>Seleccion sin boton (binding)</h1>
+    <p>{{ this.seleccionados.join(", ") }}</p>
+    <h1>Seleccion con boton</h1>
+    <p>{{ mensaje }}</p>
   </div>
 </template>
 
