@@ -7,7 +7,9 @@
         <li class="nav-item"><router-link to="/comics" class="nav-link">Comics</router-link></li>
         <li class="nav-item"><router-link to="/numeros" class="nav-link">Números</router-link></li>
         <li class="nav-item"><router-link to="/numerodoble" class="nav-link">Numero Doble Sin</router-link></li>
-        <li class="nav-item"><router-link to="/numerodoble/77" class="nav-link">Numero Doble</router-link></li>
+        <li class="nav-item" v-for="num in numeros" :key="num">
+            <router-link :to="'/numerodoble/'+num" class="nav-link">Doble {{ num }}</router-link>
+        </li>
       </ul>
     </div>
   </nav>
@@ -16,7 +18,12 @@
 
 <script>
 export default {
-    name:"MenuComponent"
+    name:"MenuComponent",
+    data(){
+        return{
+            numeros: [77,22,11]
+        }
+    }
 }
 </script>
 
