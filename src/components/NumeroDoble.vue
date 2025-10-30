@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{ mensaje }}</h1>
-
+        <button @click="redirectToHome">Redirect</button>
     </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
         return{
             mensaje:"",
             doble:0
+        }
+    },
+    methods:{
+        redirectToHome(){
+            this.$router.push("/")
         }
     },
     mounted(){
