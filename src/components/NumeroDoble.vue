@@ -10,7 +10,8 @@ export default {
     name:"NumeroDoble",
     data(){
         return{
-            mensaje:""
+            mensaje:"",
+            doble:0
         }
     },
     mounted(){
@@ -18,7 +19,15 @@ export default {
         if (numero === "") {
             this.mensaje = "Sin Parametros en el Routing"
         }else{
-            this.mensaje = "Parametro Recibido " + numero
+            this.doble = parseInt(numero) * 2;
+            this.mensaje = "El doble del numero es: " + this.doble
+        }
+    },
+    watch:{
+        '$route.params.numero' (nextval, oldVal){
+            this.doble = parseInt(this.$route.params.numero) * 2;
+            this.mensaje = "El doble del numero es: " + this.doble
+            console.log("NextVal: ",nextval," OldVal ",oldVal);
         }
     }
     }
