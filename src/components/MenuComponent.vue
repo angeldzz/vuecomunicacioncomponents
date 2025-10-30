@@ -3,6 +3,9 @@
     <div class="nav-container">
       <div class="nav-brand">Mi App Vue</div>
       <ul class="nav-menu">
+        <li class="nav-item" v-for="num in numeroMult" :key="num">
+            <router-link :to="'/multiplicar/' + num" class="nav-link">TablaM {{ num }}</router-link>
+        </li>
         <li class="nav-item"><router-link to="/" class="nav-link">Deportes</router-link></li>
         <li class="nav-item"><router-link to="/comics" class="nav-link">Comics</router-link></li>
         <li class="nav-item"><router-link to="/numeros" class="nav-link">Números</router-link></li>
@@ -21,7 +24,13 @@ export default {
     name:"MenuComponent",
     data(){
         return{
-            numeros: [77,22,11]
+            numeros: [77,22,11],
+            numeroMult: []
+        }
+    },
+    mounted(){
+        for (let i = 0; i < 2; i++) {
+            this.numeroMult.push(parseInt(Math.random()*100) + 1)
         }
     }
 }
