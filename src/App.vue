@@ -3,14 +3,12 @@
     <!-- <PadreDeportes/> -->
     <!-- <PadreNumeros/> -->
     <!-- <ComicsComponent/> -->
-    <GenerarCheckboxVue/>
-    <SeleccionMultiple/>
+    <MenuComponent/>
   </div>
 </template>
 
 <script>
-import GenerarCheckboxVue from './components/GenerarCheckbox.vue'
-import SeleccionMultiple from './components/SeleccionMultiple.vue'
+import MenuComponent from './components/MenuComponent.vue'
 // import ComicsComponent from './components/ComicsComponent.vue'
 // import PadreDeportes from './components/PadreDeportes.vue'
 // import PadreNumeros from './components/PadreNumeros.vue'
@@ -20,7 +18,7 @@ export default {
     // PadreDeportes,
     // PadreNumeros,
     // ComicsComponent,
-    SeleccionMultiple,GenerarCheckboxVue
+    MenuComponent
   }
 }
 </script>
@@ -32,6 +30,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
